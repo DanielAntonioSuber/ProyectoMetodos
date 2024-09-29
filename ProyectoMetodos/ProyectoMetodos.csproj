@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD41B711-8635-419E-9E5C-272F7E62BD91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProyectoMetodos</RootNamespace>
+    <AssemblyName>ProyectoMetodos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Aitken_Biseccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Aitken_Biseccion.Designer.cs">
+      <DependentUpon>Metodo_Aitken_Biseccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Biseccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Biseccion.Designer.cs">
+      <DependentUpon>Metodo_Biseccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Falsa_Posicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Falsa_Posicion.Designer.cs">
+      <DependentUpon>Metodo_Falsa_Posicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Muller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Muller.Designer.cs">
+      <DependentUpon>Metodo_Muller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Newton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Newton.Designer.cs">
+      <DependentUpon>Metodo_Newton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Punto_Fijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Punto_Fijo.Designer.cs">
+      <DependentUpon>Metodo_Punto_Fijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Secante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Secante.Designer.cs">
+      <DependentUpon>Metodo_Secante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Steffensen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Steffensen.Designer.cs">
+      <DependentUpon>Metodo_Steffensen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetSolEc.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Aitken_Biseccion.resx">
+      <DependentUpon>Metodo_Aitken_Biseccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Biseccion.resx">
+      <DependentUpon>Metodo_Biseccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Falsa_Posicion.resx">
+      <DependentUpon>Metodo_Falsa_Posicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Muller.resx">
+      <DependentUpon>Metodo_Muller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Newton.resx">
+      <DependentUpon>Metodo_Newton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Punto_Fijo.resx">
+      <DependentUpon>Metodo_Punto_Fijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Secante.resx">
+      <DependentUpon>Metodo_Secante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Steffensen.resx">
+      <DependentUpon>Metodo_Steffensen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
