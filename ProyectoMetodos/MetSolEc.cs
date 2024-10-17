@@ -541,7 +541,65 @@ namespace ProyectoMetodos
             MessageBox.Show("No se pudo obtener la raiz con el error deseado", "AVISO",
                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
-        } 
+        }
+
+
+        public bool MetodoAitkenSecante(float p0, float p1, DataGridView dgvResultado)
+        {
+            float p2, p, ErrorAct;
+            int i;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("valor_p0", "p0");
+            dgvResultado.Columns.Add("valor_p1", "p1");
+            dgvResultado.Columns.Add("valor_p2", "p2");
+            dgvResultado.Columns.Add("valor_p", "p");
+            dgvResultado.Columns.Add("F_p0", "F(p0)");
+            dgvResultado.Columns.Add("F_p1", "F(p1)");
+            dgvResultado.Columns.Add("F_p2", "F(p2)");
+            dgvResultado.Columns.Add("F_p", "F(p)");
+            dgvResultado.Columns.Add("Error", "error");
+
+            i = 1;
+            while (i <= NumIter)
+            {
+                p2 = p0 - FuncA(p0) * ((p1 - p0) / (FuncA(p1) - FuncA(p0)));
+
+                dgvResultado.Rows.Add();
+                dgvResultado.Rows[i - 1].Cells[0].Value = i;
+                dgvResultado.Rows[i - 1].Cells[1].Value = p0;
+                dgvResultado.Rows[i - 1].Cells[2].Value = p1;
+                dgvResultado.Rows[i - 1].Cells[3].Value = p2;
+                dgvResultado.Rows[i - 1].Cells[4].Value = FuncA(p0);
+                dgvResultado.Rows[i - 1].Cells[5].Value = FuncA(p1);
+                dgvResultado.Rows[i - 1].Cells[6].Value = FuncA(p2);
+
+                p = p0 - (float)Math.Pow(p1 - p0, 2) / (p2 - 2 * p1 + p0);
+                ErrorAct = Math.Abs(p - p2);
+
+                dgvResultado.Rows[i - 1].Cells[3].Value = p;
+                dgvResultado.Rows[i - 1].Cells[6].Value = FuncA(p);
+                dgvResultado.Rows[i - 1].Cells[7].Value = ErrorAct;
+
+                if (ErrorAct <= errorMax)
+                {
+                    MessageBox.Show("Se obtuvo la raiz con el error deseado. Raiz=" + p.ToString(), "AVISO",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                p0 = p;
+                p1 = p2;
+                i++;
+
+            }
+            MessageBox.Show("No se pudo obtener la raiz con el error deseado", "AVISO",
+                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+
+        }
+
 
         public bool MetodoHorner(int grado, float[] coeficientes, float p0, DataGridView dgvResultado)
         {

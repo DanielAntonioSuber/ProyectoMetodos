@@ -59,6 +59,12 @@
     <Compile Include="Metodo_Aitken_Biseccion.Designer.cs">
       <DependentUpon>Metodo_Aitken_Biseccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodo_Aitken_Secante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Aitken_Secante.Designer.cs">
+      <DependentUpon>Metodo_Aitken_Secante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodo_Biseccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Metodo_Aitken_Biseccion.resx">
       <DependentUpon>Metodo_Aitken_Biseccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Aitken_Secante.resx">
+      <DependentUpon>Metodo_Aitken_Secante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Metodo_Biseccion.resx">
       <DependentUpon>Metodo_Biseccion.cs</DependentUpon>

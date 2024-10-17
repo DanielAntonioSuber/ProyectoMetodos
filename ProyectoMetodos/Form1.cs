@@ -71,7 +71,8 @@ namespace ProyectoMetodos
 
         private void metodoAitkenSecanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Metodo_Aitken_Secante formAitkenS = new Metodo_Aitken_Secante();
+            formAitkenS.Show();
         }
     }
 }
