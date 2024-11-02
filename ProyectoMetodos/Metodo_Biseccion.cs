@@ -61,5 +61,10 @@ namespace ProyectoMetodos
         {
 
         }
+
+        private void Metodo_Biseccion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

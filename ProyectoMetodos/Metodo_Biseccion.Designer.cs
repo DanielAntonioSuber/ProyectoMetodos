@@ -169,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Metodo_Biseccion";
             this.Text = "Metodo_Biseccion";
+            this.Load += new System.EventHandler(this.Metodo_Biseccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -95,12 +95,14 @@ namespace ProyectoMetodos
 
         private void trapecioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Integracion_Trapecio formTrapecio = new Integracion_Trapecio();
+            formTrapecio.Show();
         }
 
         private void simpson13ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Integracion_Simpson_1_3 formSimpson13 = new Integracion_Simpson_1_3();
+            formSimpson13.Show();
         }
 
         private void simpson38ToolStripMenuItem_Click(object sender, EventArgs e)
