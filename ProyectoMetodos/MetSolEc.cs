@@ -60,7 +60,7 @@ namespace ProyectoMetodos
                         "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
-                if (Func(a) * Func(b) < 0)
+                if (Func(a) * Func(c) < 0)
                 {
                     b = c;
                 }
@@ -420,7 +420,7 @@ namespace ProyectoMetodos
 
         public bool MetodoAitkenBiseccion(float a, float b, DataGridView dgvResultado)
         {
-            float p0, p1, p2, p, a1 = 0, b1 = 0, a2 = 0, b2 = 0,  ErrorAct;
+            float p0, p1, p2, p, a1 = 0, b1 = 0, a2 = 0, b2 = 0, ErrorAct;
             int i;
 
             dgvResultado.Rows.Clear();
@@ -469,17 +469,19 @@ namespace ProyectoMetodos
                 dgvResultado.Rows[i - 1].Cells[2].Value = b;
                 dgvResultado.Rows[i - 1].Cells[3].Value = p0;
                 dgvResultado.Rows[i - 1].Cells[4].Value = FuncA(a);
-                dgvResultado.Rows[i - 1].Cells[5].Value = Func(b);
-                dgvResultado.Rows[i - 1].Cells[6].Value = Func(p0);
+                dgvResultado.Rows[i - 1].Cells[5].Value = FuncA(b);
+                dgvResultado.Rows[i - 1].Cells[6].Value = FuncA(p0);
 
 
                 if (FuncA(a) * FuncA(p0) < 0)
                 {
                     b1 = p0;
+                    a1 = a;
                 }
                 else
                 {
                     a1 = p0;
+                    b1 = b;
                 }
 
                 p1 = (a1 + b1) / 2;
@@ -495,13 +497,15 @@ namespace ProyectoMetodos
                 if (FuncA(a1) * FuncA(p1) < 0)
                 {
                     b2 = p1;
+                    a2 = a1;
                 }
                 else
                 {
                     a2 = p1;
+                    b2 = b1;
                 }
 
-                p2 = (a + b) / 2;
+                p2 = (a2 + b2) / 2;
 
 
                 dgvResultado.Rows[i - 1].Cells[13].Value = a2;
@@ -511,20 +515,22 @@ namespace ProyectoMetodos
                 dgvResultado.Rows[i - 1].Cells[17].Value = FuncA(b2);
                 dgvResultado.Rows[i - 1].Cells[18].Value = FuncA(p2);
 
+                p = p0 - (float)Math.Pow(p1 - p0, 2) / (p2 - 2 * p1 + p0);
+                ErrorAct = Math.Abs(p - p2);
+
                 if (FuncA(a) * FuncA(p2) < 0)
                 {
                     b = p2;
+                    a = p;
                 }
                 else
                 {
                     a = p2;
+                    b = p;
                 }
 
-                p = p0 - (float)Math.Pow(p1 - p0, 2) / (p2 - 2 * p1 + p0);
-                ErrorAct = Math.Abs(p - p2);
-
                 dgvResultado.Rows[i - 1].Cells[19].Value = p;
-                dgvResultado.Rows[i - 1].Cells[20].Value = Func(p);
+                dgvResultado.Rows[i - 1].Cells[20].Value = FuncA(p);
                 dgvResultado.Rows[i - 1].Cells[21].Value = ErrorAct;
 
                 if (ErrorAct <= errorMax)
@@ -541,6 +547,7 @@ namespace ProyectoMetodos
             MessageBox.Show("No se pudo obtener la raiz con el error deseado", "AVISO",
                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
+
         }
 
 
