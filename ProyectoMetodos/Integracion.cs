@@ -43,6 +43,61 @@ namespace ProyectoMetodos
             return sumatoria;
         }
 
+        public float MetodoTrapecioMultiple(float x0, float xn, int numSubIntX, float y0, float ym, float numSubIntY)
+        {
+
+            float hx, hy;
+            float resultado = 0;
+            float n = numSubIntX;
+            float m = numSubIntY;
+            
+            hx = (xn - x0) / n;
+            hy = (ym - y0) / m;
+
+            float sum = 0;
+            float sum2 = 0;
+            float sum3 = 0;
+
+       
+            for (int j = 0; (j < m - 1); j ++)
+            {
+                sum = funcion(x0, y0 + (hy * j));
+            }
+
+            resultado += ((hx * hy) / 2) * (funcion(x0, y0) / 2) + sum + (funcion(x0, ym) / 2) ;
+
+            sum = 0;
+            for (int i = 0;  (i < n - 1); i++)
+            {
+                sum = funcion(x0 + (hx * i), y0);
+            }
+
+            for (int i = 0; (i < n - 1); i++)
+            {
+                for (int j = 0; (j < m - 1); j++)
+                {
+                    sum2 = funcion(x0 + (hx * i) , y0 + (hy * j));
+                }
+            }
+
+            for (int i = 1; (i < (n - 1)); i++)
+            {
+                sum3 = funcion(x0 + (hx * (i + 1)), ym);
+            }
+
+            resultado += hx * hy * ((sum / 2) + sum2 + (sum3 / 2));
+
+            sum = 0;
+            for (int j = 0; j < (m - 1); j++)
+            {
+                sum += funcion(xn, y0 + (hy * j));
+            }
+
+            resultado += ((hx * hy) / 2) * ( (funcion(xn, y0) / 2) + sum + (funcion(xn, ym) / 2)) ;
+
+            return resultado;
+        }
+
         //metodo simpson 1/3
         // integral = (h/3) * (f0 + 4sumatoria(f2i -1) + 2*sumatoria(f2i) +fn
         public float Simpson1_3(float x0, float xn, int k)
@@ -86,6 +141,16 @@ namespace ProyectoMetodos
             float r;
             r = x * (float)Math.Sin(x);
             return r;
+        }
+
+        float funcion(float x, float y)
+        {
+            float res;
+            float r = (float) Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+
+            res =  r * (float) Math.Sin(r);
+
+            return res;
         }
     }
 }
