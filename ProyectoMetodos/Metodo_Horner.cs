@@ -45,7 +45,7 @@ namespace ProyectoMetodos
             metodos.NumIter = NumMaxIter;
             metodos.errorMax = ErrorMaximo;
 
-            Result = metodos.MetodoHorner(grado, coeficientes, p0C, p1C, p2C, ref dataGridView1);
+            Result = metodos.MetodoHorner(grado, coeficientes, p0C, p1C, p2C, dataGridView1);
         }
     }
 }

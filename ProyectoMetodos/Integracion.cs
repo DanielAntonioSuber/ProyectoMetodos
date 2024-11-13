@@ -61,28 +61,28 @@ namespace ProyectoMetodos
        
             for (int j = 0; (j < m - 1); j ++)
             {
-                sum = funcion(x0, y0 + (hy * j));
+                sum = funcion2(x0, y0 + (hy * j));
             }
 
-            resultado += ((hx * hy) / 2) * (funcion(x0, y0) / 2) + sum + (funcion(x0, ym) / 2) ;
+            resultado += ((hx * hy) / 2) * (funcion2(x0, y0) / 2) + sum + (funcion2(x0, ym) / 2) ;
 
             sum = 0;
             for (int i = 0;  (i < n - 1); i++)
             {
-                sum = funcion(x0 + (hx * i), y0);
+                sum = funcion2(x0 + (hx * i), y0);
             }
 
             for (int i = 0; (i < n - 1); i++)
             {
                 for (int j = 0; (j < m - 1); j++)
                 {
-                    sum2 = funcion(x0 + (hx * i) , y0 + (hy * j));
+                    sum2 = funcion2(x0 + (hx * i) , y0 + (hy * j));
                 }
             }
 
             for (int i = 1; (i < (n - 1)); i++)
             {
-                sum3 = funcion(x0 + (hx * (i + 1)), ym);
+                sum3 = funcion2(x0 + (hx * (i + 1)), ym);
             }
 
             resultado += hx * hy * ((sum / 2) + sum2 + (sum3 / 2));
@@ -90,10 +90,10 @@ namespace ProyectoMetodos
             sum = 0;
             for (int j = 0; j < (m - 1); j++)
             {
-                sum += funcion(xn, y0 + (hy * j));
+                sum += funcion2(xn, y0 + (hy * j));
             }
 
-            resultado += ((hx * hy) / 2) * ( (funcion(xn, y0) / 2) + sum + (funcion(xn, ym) / 2)) ;
+            resultado += ((hx * hy) / 2) * ( (funcion2(xn, y0) / 2) + sum + (funcion2(xn, ym) / 2)) ;
 
             return resultado;
         }
@@ -135,6 +135,53 @@ namespace ProyectoMetodos
             return sum1;
         }
 
+        public float Simpson3_8(float x0, float xn, int k)
+        {
+            float h;
+            float sum1 = 0;
+            float sum2 = 0;
+            float sum3 = 0;
+            float n = 3 * k;
+            float a = x0;
+            float b = xn;
+            float formula;
+
+            if (k <= 0)
+            {
+                MessageBox.Show("El numero de k debe ser mayor a 0", "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+
+            h = (b - a) / n;
+
+            for(int i = 1; i <= k; i++)
+            {
+                sum1 += funcion(a + (3 * i - 2) * h);
+            }
+
+            sum1 = 3 * sum1;
+
+            for (int i = 1; i <= k; i++)
+            {
+                sum2 += funcion(a + (3 * i - 1) * h);
+            }
+
+            sum2 = 3 * sum2;
+
+            for (int i = 1; i < k; i++)
+            {
+                sum3 += funcion(a + (3 * i) * h);
+            }
+
+            sum3 = 2 * sum3;
+
+            formula =  ((3 * h) / 8) * (funcion(a) + sum1 + sum2 + sum3 + funcion(b));
+
+            return formula;
+
+        }
+
 
         float funcion(float x)
         {
@@ -143,7 +190,7 @@ namespace ProyectoMetodos
             return r;
         }
 
-        float funcion(float x, float y)
+        float funcion2(float x, float y)
         {
             float res;
             float r = (float) Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));

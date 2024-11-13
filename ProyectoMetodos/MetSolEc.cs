@@ -608,7 +608,7 @@ namespace ProyectoMetodos
         }
 
 
-        public bool MetodoHorner(int grado, float[] coeficientes, float p0, DataGridView dgvResultado)
+        public bool MetodoHorner(int grado, float[] coeficientes, float p0,  DataGridView dgvResultado)
         {
             float[] hornerCoeficientes = coeficientes;
             Complex[] raices = new Complex[grado];

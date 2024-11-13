@@ -54,6 +54,12 @@
     <Compile Include="Integracion_Simpson_1_3.Designer.cs">
       <DependentUpon>Integracion_Simpson_1_3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integracion_Simpson_3_8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integracion_Simpson_3_8.Designer.cs">
+      <DependentUpon>Integracion_Simpson_3_8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Integracion_Trapecio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="Metodo_Falsa_Posicion.Designer.cs">
       <DependentUpon>Metodo_Falsa_Posicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Metodo_Horner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_Horner.Designer.cs">
+      <DependentUpon>Metodo_Horner.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodo_Muller.cs">
       <SubType>Form</SubType>
@@ -126,6 +138,9 @@
     <EmbeddedResource Include="Integracion_Simpson_1_3.resx">
       <DependentUpon>Integracion_Simpson_1_3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Integracion_Simpson_3_8.resx">
+      <DependentUpon>Integracion_Simpson_3_8.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Integracion_Trapecio.resx">
       <DependentUpon>Integracion_Trapecio.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Metodo_Falsa_Posicion.resx">
       <DependentUpon>Metodo_Falsa_Posicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Metodo_Horner.resx">
+      <DependentUpon>Metodo_Horner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Metodo_Muller.resx">
       <DependentUpon>Metodo_Muller.cs</DependentUpon>

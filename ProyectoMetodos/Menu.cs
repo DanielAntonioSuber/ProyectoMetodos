@@ -80,7 +80,8 @@ namespace ProyectoMetodos
 
         private void metodoDeHornerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Metodo_Horner formHorner = new Metodo_Horner();
+            formHorner.Show();
         }
 
         private void metodosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,7 +108,8 @@ namespace ProyectoMetodos
 
         private void simpson38ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Integracion_Simpson_3_8 formSimpson38 = new Integracion_Simpson_3_8();
+            formSimpson38.Show();
         }
 
         private void metodoDeMullerToolStripMenuItem_Click(object sender, EventArgs e)
