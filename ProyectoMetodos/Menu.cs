@@ -169,5 +169,25 @@ namespace ProyectoMetodos
         {
 
         }
+
+        private void ecDiferencialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void derivacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sistemasEcLinealesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminacionGaussianaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,11 +55,25 @@
             this.formulaTaylor3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulaTaylor4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulaTaylor5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.formulaTaylor5ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.ecDiferencialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
+            this.derivacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip6 = new System.Windows.Forms.MenuStrip();
+            this.sistemasEcLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminacionGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminacionGaussianaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            this.menuStrip4.SuspendLayout();
+            this.menuStrip5.SuspendLayout();
+            this.menuStrip6.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -74,9 +88,9 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.metodosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 66);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 165);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(806, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -185,9 +199,9 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.integracionToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 33);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 132);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip2.Size = new System.Drawing.Size(806, 33);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -206,21 +220,21 @@
             // trapecioToolStripMenuItem
             // 
             this.trapecioToolStripMenuItem.Name = "trapecioToolStripMenuItem";
-            this.trapecioToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
+            this.trapecioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.trapecioToolStripMenuItem.Text = "Trapecio";
             this.trapecioToolStripMenuItem.Click += new System.EventHandler(this.trapecioToolStripMenuItem_Click);
             // 
             // simpson13ToolStripMenuItem
             // 
             this.simpson13ToolStripMenuItem.Name = "simpson13ToolStripMenuItem";
-            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
+            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.simpson13ToolStripMenuItem.Text = "Simpson 1_3";
             this.simpson13ToolStripMenuItem.Click += new System.EventHandler(this.simpson13ToolStripMenuItem_Click);
             // 
             // simpson38ToolStripMenuItem
             // 
             this.simpson38ToolStripMenuItem.Name = "simpson38ToolStripMenuItem";
-            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
+            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.simpson38ToolStripMenuItem.Text = "Simpson 3_8";
             this.simpson38ToolStripMenuItem.Click += new System.EventHandler(this.simpson38ToolStripMenuItem_Click);
             // 
@@ -230,9 +244,9 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.taylorToolStripMenuItem});
-            this.menuStrip3.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip3.Location = new System.Drawing.Point(0, 99);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip3.Size = new System.Drawing.Size(806, 33);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -286,12 +300,6 @@
             this.formulaTaylor5ToolStripMenuItem.Text = "Formula Taylor4";
             this.formulaTaylor5ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor5ToolStripMenuItem_Click);
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
             // formulaTaylor5ToolStripMenuItem1
             // 
             this.formulaTaylor5ToolStripMenuItem1.Name = "formulaTaylor5ToolStripMenuItem1";
@@ -299,15 +307,119 @@
             this.formulaTaylor5ToolStripMenuItem1.Text = "Formula Taylor5";
             this.formulaTaylor5ToolStripMenuItem1.Click += new System.EventHandler(this.formulaTaylor5ToolStripMenuItem1_Click);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip4
+            // 
+            this.contextMenuStrip4.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip4.Name = "contextMenuStrip4";
+            this.contextMenuStrip4.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip5
+            // 
+            this.contextMenuStrip5.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip5.Name = "contextMenuStrip5";
+            this.contextMenuStrip5.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip4
+            // 
+            this.menuStrip4.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip4.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ecDiferencialesToolStripMenuItem});
+            this.menuStrip4.Location = new System.Drawing.Point(0, 66);
+            this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Size = new System.Drawing.Size(806, 33);
+            this.menuStrip4.TabIndex = 7;
+            this.menuStrip4.Text = "menuStrip4";
+            // 
+            // ecDiferencialesToolStripMenuItem
+            // 
+            this.ecDiferencialesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ecDiferencialesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminacionGaussianaToolStripMenuItem});
+            this.ecDiferencialesToolStripMenuItem.Name = "ecDiferencialesToolStripMenuItem";
+            this.ecDiferencialesToolStripMenuItem.Size = new System.Drawing.Size(153, 29);
+            this.ecDiferencialesToolStripMenuItem.Text = "Ec. Diferenciales";
+            this.ecDiferencialesToolStripMenuItem.Click += new System.EventHandler(this.ecDiferencialesToolStripMenuItem_Click);
+            // 
+            // menuStrip5
+            // 
+            this.menuStrip5.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip5.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.derivacionToolStripMenuItem});
+            this.menuStrip5.Location = new System.Drawing.Point(0, 33);
+            this.menuStrip5.Name = "menuStrip5";
+            this.menuStrip5.Size = new System.Drawing.Size(806, 33);
+            this.menuStrip5.TabIndex = 8;
+            this.menuStrip5.Text = "menuStrip5";
+            // 
+            // derivacionToolStripMenuItem
+            // 
+            this.derivacionToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.derivacionToolStripMenuItem.Name = "derivacionToolStripMenuItem";
+            this.derivacionToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
+            this.derivacionToolStripMenuItem.Text = "Derivacion";
+            this.derivacionToolStripMenuItem.Click += new System.EventHandler(this.derivacionToolStripMenuItem_Click);
+            // 
+            // menuStrip6
+            // 
+            this.menuStrip6.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip6.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sistemasEcLinealesToolStripMenuItem});
+            this.menuStrip6.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip6.Name = "menuStrip6";
+            this.menuStrip6.Size = new System.Drawing.Size(806, 33);
+            this.menuStrip6.TabIndex = 9;
+            this.menuStrip6.Text = "menuStrip6";
+            // 
+            // sistemasEcLinealesToolStripMenuItem
+            // 
+            this.sistemasEcLinealesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sistemasEcLinealesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminacionGaussianaToolStripMenuItem1});
+            this.sistemasEcLinealesToolStripMenuItem.Name = "sistemasEcLinealesToolStripMenuItem";
+            this.sistemasEcLinealesToolStripMenuItem.Size = new System.Drawing.Size(186, 29);
+            this.sistemasEcLinealesToolStripMenuItem.Text = "Sistemas ec. lineales";
+            this.sistemasEcLinealesToolStripMenuItem.Click += new System.EventHandler(this.sistemasEcLinealesToolStripMenuItem_Click);
+            // 
+            // eliminacionGaussianaToolStripMenuItem
+            // 
+            this.eliminacionGaussianaToolStripMenuItem.Name = "eliminacionGaussianaToolStripMenuItem";
+            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(287, 34);
+            this.eliminacionGaussianaToolStripMenuItem.Text = "Eliminacion Gaussiana";
+            // 
+            // eliminacionGaussianaToolStripMenuItem1
+            // 
+            this.eliminacionGaussianaToolStripMenuItem1.Name = "eliminacionGaussianaToolStripMenuItem1";
+            this.eliminacionGaussianaToolStripMenuItem1.Size = new System.Drawing.Size(287, 34);
+            this.eliminacionGaussianaToolStripMenuItem1.Text = "Eliminacion Gaussiana";
+            this.eliminacionGaussianaToolStripMenuItem1.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 453);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
+            this.Controls.Add(this.menuStrip4);
+            this.Controls.Add(this.menuStrip5);
+            this.Controls.Add(this.menuStrip6);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
@@ -318,6 +430,12 @@
             this.menuStrip2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
+            this.menuStrip5.ResumeLayout(false);
+            this.menuStrip5.PerformLayout();
+            this.menuStrip6.ResumeLayout(false);
+            this.menuStrip6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +471,16 @@
         private System.Windows.Forms.ToolStripMenuItem formulaTaylor4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formulaTaylor5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formulaTaylor5ToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip5;
+        private System.Windows.Forms.MenuStrip menuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem ecDiferencialesToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip5;
+        private System.Windows.Forms.ToolStripMenuItem derivacionToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip6;
+        private System.Windows.Forms.ToolStripMenuItem sistemasEcLinealesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminacionGaussianaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminacionGaussianaToolStripMenuItem1;
     }
 }
