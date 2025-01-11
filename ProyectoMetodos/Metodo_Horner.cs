@@ -36,16 +36,15 @@ namespace ProyectoMetodos
             ErrorMaximo = float.Parse(ErrMaxtxt.Text);
             NumMaxIter = int.Parse(NuMaxItertxt.Text);
 
-            Complex p0C = new Complex(p0, 0);
-            Complex p1C = new Complex(p1, 0);
-            Complex p2C = new Complex(p2, 0);
-
-
-
             metodos.NumIter = NumMaxIter;
             metodos.errorMax = ErrorMaximo;
 
-            Result = metodos.MetodoHorner(grado, coeficientes, p0C, p1C, p2C, dataGridView1);
+            Result = metodos.MetodoHorner(grado, coeficientes, p0, dataGridView1);
+        }
+
+        private void Metodo_Horner_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

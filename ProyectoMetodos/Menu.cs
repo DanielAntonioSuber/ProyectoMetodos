@@ -117,5 +117,57 @@ namespace ProyectoMetodos
             Metodo_Muller formMuller = new Metodo_Muller();
             formMuller.Show();
         }
+
+        private void formulaT2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taylorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formulaTaylor1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formula_Taylor_0 taylor1Form = new Formula_Taylor_0();
+            taylor1Form.Show();
+        }
+
+        private void formulaTaylor2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formula_Taylor_1 taylor1Form = new Formula_Taylor_1();
+            taylor1Form.Show();
+        }
+
+        private void formulaTaylor3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formula_Taylor_2 taylor1Form = new Formula_Taylor_2();
+            taylor1Form.Show();
+        }
+
+        private void formulaTaylor4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formula_Taylor_3 taylor1Form = new Formula_Taylor_3();
+           
+            taylor1Form.Show();
+        }
+
+        private void formulaTaylor5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulario_Taylor_4 taylor1Form = new Formulario_Taylor_4();
+            taylor1Form.Show();
+        }
+
+        private void formulaTaylor5ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Formula_Taylor_5 taylor1Form = new Formula_Taylor_5();
+            taylor1Form.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
