@@ -187,7 +187,8 @@ namespace ProyectoMetodos
 
         private void eliminacionGaussianaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Eliminacion_Gaussiana Elim_Gauss = new Eliminacion_Gaussiana();
+            Elim_Gauss.Show();
         }
     }
 }
