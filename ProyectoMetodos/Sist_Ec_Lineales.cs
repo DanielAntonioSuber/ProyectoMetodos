@@ -28,5 +28,23 @@ namespace ProyectoMetodos
             }
             return true;
         }
+
+        public float[] SustitucionHaciaAtras(float[,] matriz, int n)
+        {
+            float[] soluciones = new float[n];
+            int i; 
+
+            for (i = n - 1; i >= 0; i--)
+            {
+                float suma = 0;
+                for (int j = i + 1; j < n; j++)
+                {
+                    suma += matriz[i, j] * soluciones[j];
+                }
+                soluciones[i] = (matriz[i, n] - suma) / matriz[i, i];
+            }
+
+            return soluciones;
+        }
     }
 }
