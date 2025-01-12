@@ -182,6 +182,106 @@ namespace ProyectoMetodos
 
         }
 
+        public float IntegralDoble_trapecio(float a, float b, float c, float d, int n_x, int n_y)
+        {
+            // Paso en x y en y
+            float h_x = (b - a) / n_x;
+            float h_y = (d - c) / n_y;
+
+            float sum = 0;
+
+            for (int i = 0; i <= n_x; i++)
+            {
+                float x_i = a + i * h_x;
+
+                float f_c = Func(x_i, c);
+                float f_d = Func(x_i, d);
+
+                sum += (1/2) * (f_c + f_d);  // Los puntos en los límites (c y d)
+
+                for (int j = 1; j < n_y; j++)
+                {
+                    float y_j = c + j * h_y;
+                    sum += 2 * Func(x_i, y_j);
+                }
+            }
+
+            sum *= h_x * h_y;
+
+            return sum;
+        }
+
+        public float IntegralDoble_Simpson(float a, float b, float c, float d, int n_x, int n_y)
+        {
+            float h_x = (b - a) / n_x;
+            float h_y = (d - c) / n_y;
+
+            float sum = 0;
+
+            sum += Func(a, c) + Func(a, d) + Func(b, c) + Func(b, d);
+
+            for (int i = 1; i < n_x; i++)
+            {
+                float x_i = a + i * h_x;
+
+                sum += 4 * Func(x_i, c) + 4 * Func(x_i, d);
+
+                for (int j = 1; j < n_y; j++)
+                {
+                    float y_j = c + j * h_y;
+                    sum += 2 * Func(x_i, y_j);
+                }
+            }
+
+            for (int j = 1; j < n_y; j++)
+            {
+                float y_j = c + j * h_y;
+
+                sum += 4 * Func(a, y_j) + 4 * Func(b, y_j);
+
+                for (int i = 1; i < n_x; i++)
+                {
+                    float x_i = a + i * h_x;
+                    sum += 16 * Func(x_i, y_j);
+                }
+            }
+
+            sum *= h_x * h_y / 9;
+
+            return sum;
+        }
+        /*
+
+        float integral_doble_numerica(float x0, float xn, 
+            float y0, float ym, int n, int m)
+        {
+            float resultado = 0;
+            float hx, hy;
+            float sum1 = 0;
+            float sum2 = 0;
+            int i, j;
+
+            hx = (xn - x0) / 2;
+            hy = (ym - y0) / 2;
+
+            for(j=1; j<m; j++)
+            {
+                sum1 = sum1 + funcion2(x0, y0 + hy * j);
+                
+            }
+            sum1 = (sum1 + funcion2(x0, y0) / 2 + funcion2(x0, ym) / 2);
+            resultado = sum1;
+            sum1 = 0;
+
+            for (i = 1; i<xn; i++)
+            {
+                sum1=
+            }
+            return resultado;
+        }
+        */
+
+
 
         float funcion(float x)
         {
@@ -198,6 +298,11 @@ namespace ProyectoMetodos
             res =  r * (float) Math.Sin(r);
 
             return res;
+        }
+
+        public float Func(float x, float y)
+        {
+            return x * x + y * y;  // Ejemplo de función f(x, y)
         }
     }
 }

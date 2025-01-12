@@ -195,5 +195,35 @@ namespace ProyectoMetodos
         {
 
         }
+
+        private void eliminacionGaussianaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Eliminacion_Gaussiana Elim_Gauss = new Eliminacion_Gaussiana();
+            Elim_Gauss.Show();
+        }
+
+        private void eulerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Metodo_euler Euler = new Metodo_euler();
+            Euler.Show();
+        }
+
+        private void trapecioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Trapecio_Compuesta_Multiple Trapecio_doble = new Trapecio_Compuesta_Multiple();
+            Trapecio_doble.Show();
+        }
+
+        private void simpson13ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Simpson_Compuesta_Multiple Trapecio_doble = new Simpson_Compuesta_Multiple();
+            Trapecio_doble.Show();
+        }
+
+        private void derivacionAdelanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Derivada_Númerica derivar = new Derivada_Númerica();
+            derivar.Show();
+        }
     }
 }

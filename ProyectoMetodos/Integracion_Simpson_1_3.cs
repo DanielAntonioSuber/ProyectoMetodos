@@ -73,5 +73,10 @@ namespace ProyectoMetodos
             resultado = MetIntegracion.Simpson1_3(a, b, n);
             Resultado_txt.Text = resultado.ToString();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
