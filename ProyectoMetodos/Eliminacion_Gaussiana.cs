@@ -71,17 +71,48 @@ namespace ProyectoMetodos
                     }
                 }
 
-                Sist_Ec_Lineales solver = new Sist_Ec_Lineales();
-                if (solver.eliminacion_gaussiana(MatrizAum, NumIncog))
+                Sist_Ec_Lineales ecuacionesLineales = new Sist_Ec_Lineales();
+
+
+                if (gaussRB.Checked)
                 {
-                    float[] soluciones = solver.SustitucionHaciaAtras(MatrizAum, NumIncog);
-                    string resultados = string.Join(Environment.NewLine, soluciones.Select((x, idx) => $"X{idx + 1} = {x:F4}"));
-                    MessageBox.Show($"Eliminación gaussiana realizada con éxito.\n\nResultados:\n{resultados}", "Éxito");
-                    Resultado();
-                }
-                else
+                    if (ecuacionesLineales.eliminacion_gaussiana(MatrizAum, NumIncog))
+                    {
+                        float[] soluciones = ecuacionesLineales.SustitucionHaciaAtras(MatrizAum, NumIncog);
+                        string resultados = string.Join(Environment.NewLine, soluciones.Select((x, idx) => $"X{idx + 1} = {x:F4}"));
+                        MessageBox.Show($"Eliminación gaussiana realizada con éxito.\n\nResultados:\n{resultados}", "Éxito");
+                        Resultado();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la eliminación gaussiana.");
+                    }
+                } else if (pMaximoRB.Checked)
                 {
-                    MessageBox.Show("No se pudo realizar la eliminación gaussiana.");
+                    if (ecuacionesLineales.PivoteoMaximoColumna(MatrizAum, NumIncog))
+                    {
+                        float[] soluciones = ecuacionesLineales.SustitucionHaciaAtras(MatrizAum, NumIncog);
+                        string resultados = string.Join(Environment.NewLine, soluciones.Select((x, idx) => $"X{idx + 1} = {x:F4}"));
+                        MessageBox.Show($"Eliminación gaussiana realizada con éxito.\n\nResultados:\n{resultados}", "Éxito");
+                        Resultado();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la eliminación gaussiana.");
+                    }
+                } else if(pParcialRB.Checked)
+                {
+                    if (ecuacionesLineales.PivoteoParcialEscalado(MatrizAum, NumIncog))
+                    {
+                        float[] soluciones = ecuacionesLineales.SustitucionHaciaAtras(MatrizAum, NumIncog);
+                        string resultados = string.Join(Environment.NewLine, soluciones.Select((x, idx) => $"X{idx + 1} = {x:F4}"));
+                        MessageBox.Show($"Eliminación gaussiana realizada con éxito.\n\nResultados:\n{resultados}", "Éxito");
+                        Resultado();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la eliminación gaussiana.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -108,6 +139,11 @@ namespace ProyectoMetodos
                     dataGridView2.Rows[i].Cells[j].Value = MatrizAum[i, j].ToString();
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

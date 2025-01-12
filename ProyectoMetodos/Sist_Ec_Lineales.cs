@@ -106,29 +106,24 @@ namespace ProyectoMetodos
             int[] permutacion = new int[n];
             float[] escalas = new float[n];
 
-            // Inicializar las permutaciones y las escalas
             for (int i = 0; i < n; i++)
             {
                 permutacion[i] = i;
                 escalas[i] = 0;
 
-                // Calcular la escala como el valor máximo absoluto en cada fila
                 for (int j = 0; j < n; j++)
                 {
                     escalas[i] = Math.Max(escalas[i], Math.Abs(matriz[i, j]));
                 }
 
-                // Verificar si la fila es nula (escala cero)
                 if (escalas[i] == 0)
                 {
                     return false; // El sistema no tiene solución
                 }
             }
 
-            // Iterar sobre cada columna para triangular la matriz
             for (int k = 0; k < n; k++)
             {
-                // Encontrar el pivote usando el criterio de escalado
                 int pivoteFila = k;
                 float maxRatio = 0;
 
@@ -142,7 +137,6 @@ namespace ProyectoMetodos
                     }
                 }
 
-                // Intercambiar filas en la permutación
                 if (pivoteFila != k)
                 {
                     int temp = permutacion[k];
@@ -150,13 +144,11 @@ namespace ProyectoMetodos
                     permutacion[pivoteFila] = temp;
                 }
 
-                // Verificar si el pivote es cero (matriz singular)
                 if (matriz[permutacion[k], k] == 0)
                 {
                     return false; // No se puede triangular
                 }
 
-                // Eliminar hacia adelante para triangular la matriz
                 for (int i = k + 1; i < n; i++)
                 {
                     float factor = -matriz[permutacion[i], k] / matriz[permutacion[k], k];
@@ -169,7 +161,6 @@ namespace ProyectoMetodos
                 }
             }
 
-            // Si llegamos aquí, el pivoteo fue exitoso
             return true;
         }
     }
