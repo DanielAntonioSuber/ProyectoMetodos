@@ -57,8 +57,8 @@ namespace ProyectoMetodos
 
             for (i = 0; i < n; i++)
             {
-                // Encontrar el valor máximo absoluto en la columna i
-                RengInterec = -1;
+                // Encontrar el valor max absoluto en la columna i
+                RengInterec = i;
                 aux = Math.Abs(matriz[i, i]);
                 for (r = i + 1; r < n; r++)
                 {
@@ -69,99 +69,104 @@ namespace ProyectoMetodos
                     }
                 }
 
-                // Intercambiar filas si se encuentra un nuevo pivote
-                if (RengInterec != -1)
+                if (RengInterec != i)
                 {
-                    for (j = 1; j <= n; j++) // j comienza en 0
+                    for (j = 0; j <= n; j++)
                     {
-                        aux = matriz[i, j];
+                        float temp = matriz[i, j];
                         matriz[i, j] = matriz[RengInterec, j];
-                        matriz[RengInterec, j] = aux;
+                        matriz[RengInterec, j] = temp;
                     }
                 }
 
-                // Verificar si el pivote es cero (división imposible)
-                if (matriz[i, i] == 0)
+                if (Math.Abs(matriz[i, i]) < 1e-6)
                 {
-                    continue;
+                    return false;
                 }
 
-                // Realizar eliminación hacia adelante
                 for (r = i + 1; r < n; r++)
                 {
                     multiplicador = -matriz[r, i] / matriz[i, i];
-                    matriz[r, i] = 0; // Eliminar este elemento
+                    matriz[r, i] = 0;
 
-                    for (j = i + 1; j <= n; j++) // j comienza en i + 1
+                    for (j = i + 1; j <= n; j++)
                     {
-                        matriz[r, j] = multiplicador * matriz[i, j] + matriz[r, j];
+                        matriz[r, j] += multiplicador * matriz[i, j];
                     }
                 }
             }
             return true;
         }
+
 
         public bool PivoteoParcialEscalado(float[,] matriz, int n)
         {
             int[] permutacion = new int[n];
             float[] escalas = new float[n];
+            int i, j, r, k;
+            int mejorFila;
+            float Coef, maxCoef;
 
-            for (int i = 0; i < n; i++)
+            for (i = 0; i < n; i++)
             {
                 permutacion[i] = i;
                 escalas[i] = 0;
 
-                for (int j = 0; j < n; j++)
+                for (j = 0; j < n; j++)
                 {
-                    escalas[i] = Math.Max(escalas[i], Math.Abs(matriz[i, j]));
+                    escalas[i] = Math.Max(escalas[i], Math.Abs(matriz[i, j])); // max de la fila
                 }
 
                 if (escalas[i] == 0)
                 {
-                    return false; // El sistema no tiene solución
+                    return false;
                 }
             }
 
-            for (int k = 0; k < n; k++)
+            for (i = 0; i < n - 1; i++)
             {
-                int pivoteFila = k;
-                float maxRatio = 0;
+                mejorFila = i;
+                maxCoef = 0;
 
-                for (int i = k; i < n; i++)
+                for (k = i; k < n; k++)
                 {
-                    float ratio = Math.Abs(matriz[permutacion[i], k]) / escalas[permutacion[i]];
-                    if (ratio > maxRatio)
+                    Coef = Math.Abs(matriz[permutacion[k], i]) / escalas[permutacion[k]];
+                    if (Coef > maxCoef)
                     {
-                        maxRatio = ratio;
-                        pivoteFila = i;
+                        maxCoef = Coef;
+                        mejorFila = k;
                     }
                 }
 
-                if (pivoteFila != k)
+                if (mejorFila != i)
                 {
-                    int temp = permutacion[k];
-                    permutacion[k] = permutacion[pivoteFila];
-                    permutacion[pivoteFila] = temp;
+                    int temp = permutacion[i];
+                    permutacion[i] = permutacion[mejorFila];
+                    permutacion[mejorFila] = temp;
                 }
 
-                if (matriz[permutacion[k], k] == 0)
+                if (Math.Abs(matriz[permutacion[i], i]) < 1e-6)
                 {
-                    return false; // No se puede triangular
+                    return false;
                 }
 
-                for (int i = k + 1; i < n; i++)
+                // Eliminacion hacia adelante
+                for (r = i + 1; r < n; r++)
                 {
-                    float factor = -matriz[permutacion[i], k] / matriz[permutacion[k], k];
-                    matriz[permutacion[i], k] = 0; // Eliminar el elemento debajo del pivote
+                    float multiplicador = -matriz[permutacion[r], i] / matriz[permutacion[i], i];
+                    matriz[permutacion[r], i] = 0;
 
-                    for (int j = k + 1; j < n; j++)
+                    for (j = i + 1; j <= n; j++)
                     {
-                        matriz[permutacion[i], j] += factor * matriz[permutacion[k], j];
+                        matriz[permutacion[r], j] += multiplicador * matriz[permutacion[i], j];
                     }
                 }
             }
 
             return true;
         }
+
+
     }
 }
+
