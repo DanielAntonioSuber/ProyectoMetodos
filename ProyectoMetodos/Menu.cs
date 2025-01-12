@@ -190,5 +190,10 @@ namespace ProyectoMetodos
             Eliminacion_Gaussiana Elim_Gauss = new Eliminacion_Gaussiana();
             Elim_Gauss.Show();
         }
+
+        private void pivoteoMaxDeColumnaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
