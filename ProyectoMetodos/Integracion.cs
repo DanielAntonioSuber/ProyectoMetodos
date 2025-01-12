@@ -98,8 +98,6 @@ namespace ProyectoMetodos
             return resultado;
         }
 
-        //metodo simpson 1/3
-        // integral = (h/3) * (f0 + 4sumatoria(f2i -1) + 2*sumatoria(f2i) +fn
         public float Simpson1_3(float x0, float xn, int k)
         {
             float h;
@@ -197,7 +195,7 @@ namespace ProyectoMetodos
                 float f_c = Func(x_i, c);
                 float f_d = Func(x_i, d);
 
-                sum += (1/2) * (f_c + f_d);  // Los puntos en los límites (c y d)
+                sum += (1/2) * (f_c + f_d); 
 
                 for (int j = 1; j < n_y; j++)
                 {
@@ -282,6 +280,83 @@ namespace ProyectoMetodos
         */
 
 
+        public float MetodoCuadraturaAdaptativa(float x0, float xn, int NumSubInt, float tolerancia)
+        {
+            float h;
+            float suma;
+            float a = x0;
+            float b = xn;
+            int n = NumSubInt;
+            int i;
+
+            if (NumSubInt <= 0)
+            {
+                MessageBox.Show("El número de subintervalos debe ser mayor a 0", "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+
+            h = (b - a) / n;
+            suma = (funcion(a) + funcion(b)) / 2;
+            for (i = 1; i < n; i++)
+            {
+                suma += funcion(a + i * h);
+            }
+            suma *= h;
+
+            float error = EstimarError(x0, xn, n);
+
+            if (error <= tolerancia)
+            {
+                return suma;
+            }
+            else
+            {
+                float medio = (a + b) / 2;
+                float sumaIzq = MetodoCuadraturaAdaptativa(a, medio, n / 2, tolerancia);
+                float sumaDer = MetodoCuadraturaAdaptativa(medio, b, n / 2, tolerancia);
+
+                return sumaIzq + sumaDer;
+            }
+        }
+
+        public float EstimarError(float x0, float xn, int n)
+        {
+            float h = (xn - x0) / n;
+            float suma1 = (funcion(x0) + funcion(xn)) / 2;
+
+            for (int i = 1; i < n; i++)
+            {
+                suma1 += funcion(x0 + i * h);
+            }
+            suma1 *= h;
+
+            int n2 = 2 * n;
+            float h2 = (xn - x0) / n2;
+            float suma2 = (funcion(x0) + funcion(xn)) / 2;
+
+            for (int i = 1; i < n2; i++)
+            {
+                suma2 += funcion(x0 + i * h2);
+            }
+            suma2 *= h2;
+
+            return Math.Abs(suma2 - suma1) / 3;
+        }
+
+        public float MetodoCuadraturaGaussiana(float x0, float xn)
+        {
+            float suma = 0;
+            float c1 = (xn - x0) / 2;
+            float c2 = (xn + x0) / 2;
+
+            float x1 = (float)(-1 / Math.Sqrt(3));
+            float x2 = (float) (1 / Math.Sqrt(3));
+
+            suma += c1 * (funcion(c1 * x1 + c2) + funcion(c1 * x2 + c2));
+
+            return suma;
+        }
 
         float funcion(float x)
         {
@@ -302,7 +377,7 @@ namespace ProyectoMetodos
 
         public float Func(float x, float y)
         {
-            return x * x + y * y;  // Ejemplo de función f(x, y)
+            return x * x + y * y;
         }
     }
 }

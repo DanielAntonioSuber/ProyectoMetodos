@@ -17,7 +17,6 @@ namespace ProyectoMetodos
             float y = y0;
             int i = 1;
 
-            // Limpiar el DataGridView antes de agregar resultados
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
@@ -25,7 +24,6 @@ namespace ProyectoMetodos
             dgvResultado.Columns.Add("Aproximacion_Euler", "Euler");
             dgvResultado.Columns.Add("Solucion_Real", "SolExacta");
 
-            // Validación de que h sea mayor que 0
             if (h <= 0)
             {
                 MessageBox.Show("El paso h debe ser mayor a 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,23 +51,32 @@ namespace ProyectoMetodos
         }
 
 
-        public void RungeKuta ()
+        public void RungeKuta4(float t0, float tf, float h, float w0, ref DataGridView dgvResultado)
         {
+            float t = t0;
+            float w = w0;
 
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("t", "t");
+            dgvResultado.Columns.Add("Aproximacion_Euler", "Euler");
+            dgvResultado.Columns.Add("Solucion_Real", "SolExacta");
+
+            while (t <= tf)
+            {
+
+                float k1 = h * Funcion(t, w);
+                float k2 = h * Funcion(t + h / 2, w + k1 / 2);
+                float k3 = h * Funcion(t + h / 2, w + k2 / 2);
+                float k4 = h * Funcion(t + h, w + k3);
+
+                w = w + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+
+                t += h;
+            }
         }
 
-        public float RK(float h, float t, float w)
-        {
-            return h * Funcion(t, w);
-        }
-    
-        public float RK2(float h, float t, float w, float k) {
-            return h * Funcion(t + h / 2, (float)( w + 0.5 * k));
-        }
-
-        public void RK3() { }
-
-        public void RK4() { }
 
         public float Funcion (float ti, float wi)
         {

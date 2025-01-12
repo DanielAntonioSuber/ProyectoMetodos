@@ -225,5 +225,18 @@ namespace ProyectoMetodos
             Derivada_Númerica derivar = new Derivada_Númerica();
             derivar.Show();
         }
+
+        private void cuadraturaAdaptativaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Integracion_Cuadratura_Adaptativa cuadraturaAdaptativa = new Integracion_Cuadratura_Adaptativa();
+            cuadraturaAdaptativa.Show();
+        }
+
+        private void cuadraturaGaussianaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Integracion_Cuadratura_Gaussiana cuadraturaGaussiana = new Integracion_Cuadratura_Gaussiana();
+
+            cuadraturaGaussiana.Show();
+        }
     }
 }

@@ -98,6 +98,18 @@
       <DependentUpon>Formula_Taylor_5.cs</DependentUpon>
     </Compile>
     <Compile Include="Integracion.cs" />
+    <Compile Include="Integracion_Cuadratura_Adaptativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integracion_Cuadratura_Adaptativa.Designer.cs">
+      <DependentUpon>Integracion_Cuadratura_Adaptativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integracion_Cuadratura_Gaussiana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integracion_Cuadratura_Gaussiana.Designer.cs">
+      <DependentUpon>Integracion_Cuadratura_Gaussiana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Integracion_Simpson_1_3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +252,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formula_Taylor_5.resx">
       <DependentUpon>Formula_Taylor_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integracion_Cuadratura_Adaptativa.resx">
+      <DependentUpon>Integracion_Cuadratura_Adaptativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integracion_Cuadratura_Gaussiana.resx">
+      <DependentUpon>Integracion_Cuadratura_Gaussiana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Integracion_Simpson_1_3.resx">
       <DependentUpon>Integracion_Simpson_1_3.cs</DependentUpon>
