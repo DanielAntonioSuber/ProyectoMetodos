@@ -28,7 +28,5 @@ namespace ProyectoMetodos
             float resultado = integracion.MetodoCuadraturaGaussiana(a, b);
             Resultado_txt.Text = resultado.ToString();
         }
-
-   
     }
 }
