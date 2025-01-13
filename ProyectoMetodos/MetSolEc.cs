@@ -608,85 +608,145 @@ namespace ProyectoMetodos
         }
 
 
-        public bool MetodoHorner(int grado, float[] coeficientes, float p0,  DataGridView dgvResultado)
+        public bool MetodoHorner(int grado, float[] coeficientes, Complex p0, Complex p1, Complex p2, DataGridView dgvResultado)
         {
-            float[] hornerCoeficientes = coeficientes;
+            Complex[] hornerCoeficientes = new Complex[coeficientes.Length];
+
+            for (int i = 0; i < coeficientes.Length; i++)
+            {
+                hornerCoeficientes[i] = new Complex(coeficientes[i], 0);
+            }
+
             Complex[] raices = new Complex[grado];
 
-            raices[0] = MetodoNewtonPolinomio(grado, coeficientes, p0);
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("indice", "Índice");
+            dgvResultado.Columns.Add("raizReal", "Raíz Real");
+            dgvResultado.Columns.Add("raizImaginaria", "Raíz Imaginaria");
+
+            raices[0] = MetodoMulleReal(p0, p1, p2, grado, hornerCoeficientes);
+            dgvResultado.Rows.Add(0, raices[0].Real, raices[0].Imaginary);
 
             for (int i = 1; i < grado; i++)
             {
-                hornerCoeficientes = HornerCoeficientes(hornerCoeficientes, (float)raices[i].Real);
+                hornerCoeficientes = HornerCoeficientes(hornerCoeficientes, raices[i - 1]);
 
-                if (grado != 2)
+                if (grado - i > 2)
                 {
+                    p0 = raices[i - 1];
+                    p1 = p0 + new Complex(1, 0); // Ajuste inicial para Müller
+                    p2 = p1 + new Complex(1, 0);
 
-                    raices[0] = MetodoNewtonPolinomio(grado - i, hornerCoeficientes, (float)raices[i].Real);
-                } else {
-                    Complex a = hornerCoeficientes[grado - 1];
-                    Complex b = hornerCoeficientes[grado - 2];
-                    Complex c = hornerCoeficientes[grado - 3];
+                    raices[i] = MetodoMulleReal(p0, p1, p2, grado - i, hornerCoeficientes);
+                    dgvResultado.Rows.Add(i, raices[i].Real, raices[i].Imaginary);
+                }
+                else
+                {
+                    // Resolver el caso de un polinomio cuadrático (grado 2)
+                    Complex a = hornerCoeficientes[0];
+                    Complex b = hornerCoeficientes[1];
+                    Complex c = hornerCoeficientes[2];
 
                     Complex discriminante = Complex.Pow(b, 2) - (4 * a * c);
 
-                    if (discriminante.Real >= 0) 
+                    if (discriminante.Real >= 0)
                     {
-                        raices[grado - 1] = (-b + Complex.Sqrt(discriminante)) / (2 * a);
-                        raices[grado - 2] = (-b - Complex.Sqrt(discriminante)) / (2 * a);
+                        raices[grado - 2] = (-b + Complex.Sqrt(discriminante)) / (2 * a);
+                        raices[grado - 1] = (-b - Complex.Sqrt(discriminante)) / (2 * a);
                     }
                     else
                     {
-                        raices[grado - 1] = (-b + Complex.Sqrt(discriminante)) / (2 * a);
-                        raices[grado - 2] = (-b - Complex.Sqrt(discriminante)) / (2 * a);
+                        raices[grado - 2] = (-b + Complex.Sqrt(discriminante)) / (2 * a);
+                        raices[grado - 1] = (-b - Complex.Sqrt(discriminante)) / (2 * a);
                     }
 
+                    dgvResultado.Rows.Add(grado - 2, raices[grado - 2].Real, raices[grado - 2].Imaginary);
+                    dgvResultado.Rows.Add(grado - 1, raices[grado - 1].Real, raices[grado - 1].Imaginary);
 
                     return true;
                 }
             }
 
-
-            return false;
+            return true;
         }
 
-        public float MetodoNewtonPolinomio(int grado, float[] coeficientes, float p0)
+        public Complex MetodoMulleReal(Complex p0, Complex p1, Complex p2, int grado, Complex[] coeficientes)
         {
-            float ErrorAct = 0f;
-            int i;
-            float a = p0;
-            float c = 0f;
+            float ErrorAct;
+            Complex p = new Complex(), a = new Complex(), b = new Complex(), c = new Complex();
+            Complex Fp1MFp2 = new Complex();
+            Complex Fp0MFp2 = new Complex();
+            Complex p0Mp2 = new Complex();
+            Complex p0Mp1 = new Complex();
+            Complex p1Mp2 = new Complex();
+            Complex Divisor = new Complex();
+            Complex D = new Complex();
+            Complex E = new Complex();
 
+            int i = 1;
 
-            if (FuncPolDer(grado, coeficientes, p0) == 0)
-            {
-                MessageBox.Show("No se puede aplicar el método de Newton", "ERROR",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            i = 1;
             while (i <= NumIter)
             {
-                c = a - (FuncPol(grado, coeficientes, a) / FuncPolDer(grado, coeficientes, a));
-                ErrorAct = Math.Abs(c - a);
+                p0Mp2 = Complex.Subtract(p0, p2);
+                p0Mp1 = Complex.Subtract(p0, p1);
+                p1Mp2 = Complex.Subtract(p1, p2);
+                Fp1MFp2 = Complex.Subtract(FuncPol(grado, coeficientes, p0), FuncPol(grado, coeficientes, p2));
+                Fp0MFp2 = Complex.Subtract(FuncPol(grado, coeficientes, p0), FuncPol(grado, coeficientes, p2));
+
+                Divisor = Complex.Multiply(p0Mp2, p1Mp2);
+                Divisor = Complex.Multiply(Divisor, p0Mp1);
+
+                c = FuncPol(grado, coeficientes, p2);
+
+                b = Complex.Pow(p0Mp2, 2) * Fp1MFp2 - Complex.Pow(p1Mp2, 2) * Fp0MFp2;
+                b = Complex.Divide(b, Divisor);
+
+                a = p1Mp2 * Fp0MFp2 - p0Mp2 * Fp1MFp2;
+                a = Complex.Divide(a, Divisor);
+
+                D = Complex.Sqrt(Complex.Subtract(Complex.Pow(b, 2), Complex.Multiply(new Complex(4, 0), Complex.Multiply(a, c))));
+
+                E = Complex.Abs(Complex.Subtract(b, D)) < Complex.Abs(Complex.Add(b, D)) ? Complex.Add(b, D) : Complex.Subtract(b, D);
+
+                p = Complex.Subtract(p2, Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
+
+                ErrorAct = (float)Complex.Abs(Complex.Divide(Complex.Multiply(new Complex(2, 0), c), E));
 
                 if (ErrorAct <= errorMax)
                 {
-                    return c;
+                    return p;
                 }
-                a = c;
 
+                p0 = p1;
+                p1 = p2;
+                p2 = p;
                 i++;
-
             }
 
-            throw new Exception("Error");
+            throw new Exception("No se pudo obtener la aproximación con el error deseado.");
         }
 
-        private float[] HornerCoeficientes(float[] coeficientes, float x)
+        private Complex FuncPol(int grado, Complex[] coeficientes, Complex x)
         {
-            float[] nuevosCoeficientes = new float[coeficientes.Length - 1];
+            Complex resultado = 0;
+            for (int i = 0; i <= grado; i++)
+            {
+                int exponente = grado - i;
+                Complex coeficiente = coeficientes[i];
+
+                resultado += coeficiente * ((Complex)Complex.Pow(x, (double)exponente));
+            }
+
+            return resultado;
+        }
+
+
+      
+
+        private Complex[] HornerCoeficientes(Complex[] coeficientes, Complex x)
+        {
+            Complex[] nuevosCoeficientes = new Complex[coeficientes.Length - 1];
 
             nuevosCoeficientes[0] = coeficientes[0];
 
@@ -700,19 +760,7 @@ namespace ProyectoMetodos
         }
 
         // Funcion polinomio
-        private float FuncPol(int grado, float[] coeficientes, float x)
-        {
-            float resultado = 0;
-            for (int i = 0; i <= grado; i++)
-            {
-                int exponente = grado - i;
-                float coeficiente = coeficientes[i];
-
-                resultado += coeficiente * ((float)Math.Pow((double)x, (double)exponente));
-            }
-
-            return resultado;
-        }
+       
 
         // Funcion Polinomio derivado
         private float FuncPolDer(int grado, float[] coeficientes, float x)

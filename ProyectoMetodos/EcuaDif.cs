@@ -12,7 +12,6 @@ namespace ProyectoMetodos
 
         public int MetodoEuler(float tMax, float y0, float h, DataGridView dgvResultado)
         {
-            // Variables de iteración
             float t = 0;
             float y = y0;
             int i = 1;

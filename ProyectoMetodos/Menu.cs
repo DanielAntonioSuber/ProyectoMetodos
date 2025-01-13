@@ -238,5 +238,10 @@ namespace ProyectoMetodos
 
             cuadraturaGaussiana.Show();
         }
+
+        private void rugenTripas1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

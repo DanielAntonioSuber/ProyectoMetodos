@@ -25,6 +25,8 @@ namespace ProyectoMetodos
             bool Result;
             MetSolEc metodos = new MetSolEc();
 
+
+
             float[] coeficientes = textCoeficientes.Text.Split(',')              // Separa el texto por comas
                                .Select(float.Parse)     // Convierte cada parte en un float
                                .ToArray();
@@ -39,7 +41,7 @@ namespace ProyectoMetodos
             metodos.NumIter = NumMaxIter;
             metodos.errorMax = ErrorMaximo;
 
-            Result = metodos.MetodoHorner(grado, coeficientes, p0, dataGridView1);
+            Result = metodos.MetodoHorner(grado, coeficientes, p0,p1,p2, dataGridView1);
         }
 
         private void Metodo_Horner_Load(object sender, EventArgs e)

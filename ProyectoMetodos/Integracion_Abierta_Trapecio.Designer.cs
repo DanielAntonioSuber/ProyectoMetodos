@@ -1,6 +1,6 @@
 ﻿namespace ProyectoMetodos
 {
-    partial class Integracion_Cuadratura_Adaptativa
+    partial class Integracion_Abierta_Trapecio
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(638, 130);
+            this.button1.Location = new System.Drawing.Point(693, 317);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 44);
@@ -54,90 +54,82 @@
             // Resultado_txt
             // 
             this.Resultado_txt.Enabled = false;
-            this.Resultado_txt.Location = new System.Drawing.Point(250, 173);
+            this.Resultado_txt.Location = new System.Drawing.Point(305, 360);
             this.Resultado_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Resultado_txt.Name = "Resultado_txt";
             this.Resultado_txt.Size = new System.Drawing.Size(89, 22);
             this.Resultado_txt.TabIndex = 38;
-            this.Resultado_txt.TextChanged += new System.EventHandler(this.Resultado_txt_TextChanged);
             // 
             // N_txt
             // 
-            this.N_txt.Location = new System.Drawing.Point(250, 143);
+            this.N_txt.Location = new System.Drawing.Point(305, 330);
             this.N_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.N_txt.Name = "N_txt";
             this.N_txt.Size = new System.Drawing.Size(89, 22);
             this.N_txt.TabIndex = 37;
-            this.N_txt.TextChanged += new System.EventHandler(this.N_txt_TextChanged);
             // 
             // B_txt
             // 
-            this.B_txt.Location = new System.Drawing.Point(358, 110);
+            this.B_txt.Location = new System.Drawing.Point(413, 297);
             this.B_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_txt.Name = "B_txt";
             this.B_txt.Size = new System.Drawing.Size(89, 22);
             this.B_txt.TabIndex = 36;
-            this.B_txt.TextChanged += new System.EventHandler(this.B_txt_TextChanged);
             // 
             // A_txt
             // 
-            this.A_txt.Location = new System.Drawing.Point(250, 110);
+            this.A_txt.Location = new System.Drawing.Point(305, 297);
             this.A_txt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_txt.Name = "A_txt";
             this.A_txt.Size = new System.Drawing.Size(89, 22);
             this.A_txt.TabIndex = 35;
-            this.A_txt.TextChanged += new System.EventHandler(this.A_txt_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 145);
+            this.label4.Location = new System.Drawing.Point(159, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 34;
             this.label4.Text = "n = ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(104, 174);
+            this.label3.Location = new System.Drawing.Point(159, 361);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 17);
             this.label3.TabIndex = 33;
             this.label3.Text = "Resultado =";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 111);
+            this.label2.Location = new System.Drawing.Point(159, 298);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 17);
             this.label2.TabIndex = 32;
             this.label2.Text = "Intervalo [a, b] :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Engravers MT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(174, 66);
+            this.label1.Location = new System.Drawing.Point(229, 253);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(491, 28);
+            this.label1.Size = new System.Drawing.Size(586, 28);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Cuadratura adapatativa";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Integracion trapecio abierto";
             // 
-            // Integracion_Cuadratura_Adaptativa
+            // Integracion_Abierta_Trapecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(955, 635);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Resultado_txt);
             this.Controls.Add(this.N_txt);
@@ -147,8 +139,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Integracion_Cuadratura_Adaptativa";
-            this.Text = "Integracion_Cuadratura_Adaptativa";
+            this.Name = "Integracion_Abierta_Trapecio";
+            this.Text = "Integracion_Abierta_Trapecio";
             this.ResumeLayout(false);
             this.PerformLayout();
 

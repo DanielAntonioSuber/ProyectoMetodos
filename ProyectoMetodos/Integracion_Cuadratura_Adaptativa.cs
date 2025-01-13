@@ -28,5 +28,45 @@ namespace ProyectoMetodos
             float resultado = integracion.MetodoCuadraturaGaussiana(a, b);
             Resultado_txt.Text = resultado.ToString();
         }
+
+        private void Resultado_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void N_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void B_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

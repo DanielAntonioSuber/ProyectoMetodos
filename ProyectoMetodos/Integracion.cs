@@ -358,6 +358,16 @@ namespace ProyectoMetodos
             return suma;
         }
 
+        public float MetodoTrapecioabierto(float x0, float h)
+        {
+            return 2 * h * funcion(x0);
+        }
+
+        public float MetodoSimpsonAbierto(float x0, float h)
+        {
+            return (float) ((3 * h) / 2) * funcion(x0);
+        }
+
         float funcion(float x)
         {
             float r;

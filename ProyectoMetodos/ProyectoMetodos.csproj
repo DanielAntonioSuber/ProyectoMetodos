@@ -98,6 +98,12 @@
       <DependentUpon>Formula_Taylor_5.cs</DependentUpon>
     </Compile>
     <Compile Include="Integracion.cs" />
+    <Compile Include="Integracion_Abierta_Trapecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integracion_Abierta_Trapecio.Designer.cs">
+      <DependentUpon>Integracion_Abierta_Trapecio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Integracion_Cuadratura_Adaptativa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     <Compile Include="Metodo_Punto_Fijo.Designer.cs">
       <DependentUpon>Metodo_Punto_Fijo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodo_RungeKuta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Metodo_RungeKuta2.Designer.cs">
+      <DependentUpon>Metodo_RungeKuta2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodo_Runge_Kuta4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formula_Taylor_5.resx">
       <DependentUpon>Formula_Taylor_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integracion_Abierta_Trapecio.resx">
+      <DependentUpon>Integracion_Abierta_Trapecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Integracion_Cuadratura_Adaptativa.resx">
       <DependentUpon>Integracion_Cuadratura_Adaptativa.cs</DependentUpon>
