@@ -51,41 +51,99 @@ namespace ProyectoMetodos
         }
 
 
-        public void RungeKuta4(float t0, float tf, float h, float w0, ref DataGridView dgvResultado)
+        public int RungeKuta4(float tMax, float y0, float h, DataGridView dgvResultado)
         {
-            float t = t0;
-            float w = w0;
+            if (h <= 0 || tMax <= 0) 
+            {
+                return -1; 
+            }
+
+            float t = 0;
+            float w = y0;
+            int iteracion = 0;
 
             dgvResultado.Rows.Clear();
             dgvResultado.Columns.Clear();
             dgvResultado.Columns.Add("iteracion", "i");
             dgvResultado.Columns.Add("t", "t");
-            dgvResultado.Columns.Add("Aproximacion_Euler", "Euler");
-            dgvResultado.Columns.Add("Solucion_Real", "SolExacta");
+            dgvResultado.Columns.Add("aproximacionRK", "Runge-Kutta 4");
 
-            while (t <= tf)
+            try
             {
+                while (t <= tMax)
+                {
+                    dgvResultado.Rows.Add(iteracion, t, w);
 
-                float k1 = h * Funcion(t, w);
-                float k2 = h * Funcion(t + h / 2, w + k1 / 2);
-                float k3 = h * Funcion(t + h / 2, w + k2 / 2);
-                float k4 = h * Funcion(t + h, w + k3);
+                    float k1 = h * Funcion(t, w);
+                    float k2 = h * Funcion(t + h / 2, w + k1 / 2);
+                    float k3 = h * Funcion(t + h / 2, w + k2 / 2);
+                    float k4 = h * Funcion(t + h, w + k3);
 
-                w = w + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+                    w += (k1 + 2 * k2 + 2 * k3 + k4) / 6;
 
-                t += h;
+                    t += h;
+                    iteracion++;
+                }
             }
+            catch
+            {
+                return -1; 
+            }
+
+            return 0; 
         }
 
-
-        public float Funcion (float ti, float wi)
+        public int RungeKutta2(float tMax, float y0, float h, DataGridView dgvResultado)
         {
-            return (float)-(0.55f * 0.000706f * Math.Sqrt(2 * 9.81 * wi) / (Math.PI * (Math.Pow(1.5, 2) - Math.Pow(1.5 - wi, 2))));
+            if (h <= 0 || tMax <= 0) 
+            {
+                return -1;
+            }
+
+            float t = 0;
+            float w = y0;
+            int iteracion = 0;
+
+            dgvResultado.Rows.Clear();
+            dgvResultado.Columns.Clear();
+            dgvResultado.Columns.Add("iteracion", "i");
+            dgvResultado.Columns.Add("t", "t");
+            dgvResultado.Columns.Add("aproximacionRK2", "Runge-Kutta 2");
+
+            try
+            {
+                while (t <= tMax)
+                {
+                    dgvResultado.Rows.Add(iteracion, t, w);
+
+                    float k1 = h * Funcion(t, w);
+                    float k2 = h * Funcion(t + h, w + k1);
+
+                    w = w + (k1 + k2) / 2;
+
+                    t += h;
+                    iteracion++;
+                }
+            }
+            catch
+            {
+                return -1; 
+            }
+
+            return 0; 
         }
-        private float FuncPrin(float x) //funcion principal, derivada 4
+
+
+        private float Funcion(float t, float y)
+        {
+            return -2 * t * y; // Ejemplo: dy/dt = -2ty
+        }
+
+        private float FuncPrin(float x)
         {
             return (float)Math.Cos(x);
         }
 
     }
+
 }

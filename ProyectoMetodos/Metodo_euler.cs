@@ -25,35 +25,29 @@ namespace ProyectoMetodos
         private void button1_Click(object sender, EventArgs e)
         {
             {
-                // Definir las variables que van a recibir los valores del formulario
                 float tMax, y0, h;
                 EcuaDif metodoEuler = new EcuaDif();  // Crear una instancia de la clase EcuaDif
                 int resultado;
 
                 try
                 {
-                    // Obtener los valores desde los TextBoxes
                     tMax = float.Parse(tMaxtxt.Text);  // Suponiendo que tienes un TextBox tMaxtxt
                     y0 = float.Parse(y0txt.Text);      // Suponiendo que tienes un TextBox y0txt
                     h = float.Parse(htxt.Text);        // Suponiendo que tienes un TextBox htxt
 
-                    // Llamar al método de Euler de la clase EcuaDif y pasar el DataGridView para mostrar resultados
                     resultado = metodoEuler.MetodoEuler(tMax, y0, h, this.dataGridView1);
 
-                    // Verificar si ocurrió algún error
                     if (resultado == -1)
                     {
                         MessageBox.Show("Hubo un error en los cálculos con el Método de Euler.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        // Maximizar la ventana después de los cálculos
                         this.WindowState = FormWindowState.Maximized;
                     }
                 }
                 catch (FormatException)
                 {
-                    // En caso de que el formato de los datos ingresados no sea correcto (por ejemplo, texto en lugar de números)
                     MessageBox.Show("Por favor, ingrese valores numéricos válidos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -80,6 +74,26 @@ namespace ProyectoMetodos
         }
 
         private void Metodo_euler_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
