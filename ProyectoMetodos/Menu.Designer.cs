@@ -48,11 +48,14 @@
             this.trapecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson38ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuadraturaGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuadraturaAdaptativaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trapecioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.simpson13ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuadraturaAdaptativaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuadraturaGaussianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abiertoTrapecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trapecioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.taylorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulaTaylor1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,9 +81,7 @@
             this.menuStrip6 = new System.Windows.Forms.MenuStrip();
             this.sistemasEcLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminacionGaussianaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.abiertoTrapecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trapecioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.simpsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sEDOSrk4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -100,10 +101,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.metodosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 130);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 120);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(537, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -122,49 +123,49 @@
             this.metodoDeHornerToolStripMenuItem,
             this.metodoDeMullerToolStripMenuItem});
             this.metodosToolStripMenuItem.Name = "metodosToolStripMenuItem";
-            this.metodosToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.metodosToolStripMenuItem.Size = new System.Drawing.Size(73, 22);
             this.metodosToolStripMenuItem.Text = "Metodos";
             this.metodosToolStripMenuItem.Click += new System.EventHandler(this.metodosToolStripMenuItem_Click);
             // 
             // metodoDeBisecciomToolStripMenuItem
             // 
             this.metodoDeBisecciomToolStripMenuItem.Name = "metodoDeBisecciomToolStripMenuItem";
-            this.metodoDeBisecciomToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeBisecciomToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeBisecciomToolStripMenuItem.Text = "Metodo de Biseccion";
             this.metodoDeBisecciomToolStripMenuItem.Click += new System.EventHandler(this.metodoDeBisecciomToolStripMenuItem_Click);
             // 
             // metodoDeFalsaPosicionToolStripMenuItem
             // 
             this.metodoDeFalsaPosicionToolStripMenuItem.Name = "metodoDeFalsaPosicionToolStripMenuItem";
-            this.metodoDeFalsaPosicionToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeFalsaPosicionToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeFalsaPosicionToolStripMenuItem.Text = "Metodo de Falsa Posicion";
             this.metodoDeFalsaPosicionToolStripMenuItem.Click += new System.EventHandler(this.metodoDeFalsaPosicionToolStripMenuItem_Click);
             // 
             // metodoDeToolStripMenuItem
             // 
             this.metodoDeToolStripMenuItem.Name = "metodoDeToolStripMenuItem";
-            this.metodoDeToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeToolStripMenuItem.Text = "Metodo de Punto Fijo";
             this.metodoDeToolStripMenuItem.Click += new System.EventHandler(this.metodoDeToolStripMenuItem_Click);
             // 
             // metodoDeSecanteToolStripMenuItem
             // 
             this.metodoDeSecanteToolStripMenuItem.Name = "metodoDeSecanteToolStripMenuItem";
-            this.metodoDeSecanteToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeSecanteToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeSecanteToolStripMenuItem.Text = "Metodo de Secante";
             this.metodoDeSecanteToolStripMenuItem.Click += new System.EventHandler(this.metodoDeSecanteToolStripMenuItem_Click);
             // 
             // metodoDeNewtonToolStripMenuItem
             // 
             this.metodoDeNewtonToolStripMenuItem.Name = "metodoDeNewtonToolStripMenuItem";
-            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeNewtonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeNewtonToolStripMenuItem.Text = "Metodo de Newton";
             this.metodoDeNewtonToolStripMenuItem.Click += new System.EventHandler(this.metodoDeNewtonToolStripMenuItem_Click);
             // 
             // metodoDeSteffensenToolStripMenuItem
             // 
             this.metodoDeSteffensenToolStripMenuItem.Name = "metodoDeSteffensenToolStripMenuItem";
-            this.metodoDeSteffensenToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeSteffensenToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeSteffensenToolStripMenuItem.Text = "Metodo de Steffensen";
             this.metodoDeSteffensenToolStripMenuItem.Click += new System.EventHandler(this.metodoDeSteffensenToolStripMenuItem_Click);
             // 
@@ -174,35 +175,35 @@
             this.aitkenBiseccionToolStripMenuItem,
             this.aitkenSecanteToolStripMenuItem});
             this.metodoDeAikenToolStripMenuItem.Name = "metodoDeAikenToolStripMenuItem";
-            this.metodoDeAikenToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeAikenToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeAikenToolStripMenuItem.Text = "Metodo de Aiken";
             this.metodoDeAikenToolStripMenuItem.Click += new System.EventHandler(this.metodoDeAikenToolStripMenuItem_Click);
             // 
             // aitkenBiseccionToolStripMenuItem
             // 
             this.aitkenBiseccionToolStripMenuItem.Name = "aitkenBiseccionToolStripMenuItem";
-            this.aitkenBiseccionToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.aitkenBiseccionToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aitkenBiseccionToolStripMenuItem.Text = "Aitken Biseccion";
             this.aitkenBiseccionToolStripMenuItem.Click += new System.EventHandler(this.aitkenBiseccionToolStripMenuItem_Click);
             // 
             // aitkenSecanteToolStripMenuItem
             // 
             this.aitkenSecanteToolStripMenuItem.Name = "aitkenSecanteToolStripMenuItem";
-            this.aitkenSecanteToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.aitkenSecanteToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aitkenSecanteToolStripMenuItem.Text = "Aitken Secante";
             this.aitkenSecanteToolStripMenuItem.Click += new System.EventHandler(this.aitkenSecanteToolStripMenuItem_Click);
             // 
             // metodoDeHornerToolStripMenuItem
             // 
             this.metodoDeHornerToolStripMenuItem.Name = "metodoDeHornerToolStripMenuItem";
-            this.metodoDeHornerToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeHornerToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeHornerToolStripMenuItem.Text = "Metodo de Horner";
             this.metodoDeHornerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeHornerToolStripMenuItem_Click);
             // 
             // metodoDeMullerToolStripMenuItem
             // 
             this.metodoDeMullerToolStripMenuItem.Name = "metodoDeMullerToolStripMenuItem";
-            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.metodoDeMullerToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.metodoDeMullerToolStripMenuItem.Text = "Metodo de Muller";
             this.metodoDeMullerToolStripMenuItem.Click += new System.EventHandler(this.metodoDeMullerToolStripMenuItem_Click);
             // 
@@ -211,10 +212,10 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.integracionToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 104);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 96);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip2.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip2.Size = new System.Drawing.Size(537, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -230,30 +231,44 @@
             this.multipleToolStripMenuItem,
             this.abiertoTrapecioToolStripMenuItem});
             this.integracionToolStripMenuItem.Name = "integracionToolStripMenuItem";
-            this.integracionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.integracionToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
             this.integracionToolStripMenuItem.Text = "Integracion";
             this.integracionToolStripMenuItem.Click += new System.EventHandler(this.integracionToolStripMenuItem_Click);
             // 
             // trapecioToolStripMenuItem
             // 
             this.trapecioToolStripMenuItem.Name = "trapecioToolStripMenuItem";
-            this.trapecioToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.trapecioToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.trapecioToolStripMenuItem.Text = "Trapecio";
             this.trapecioToolStripMenuItem.Click += new System.EventHandler(this.trapecioToolStripMenuItem_Click);
             // 
             // simpson13ToolStripMenuItem
             // 
             this.simpson13ToolStripMenuItem.Name = "simpson13ToolStripMenuItem";
-            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.simpson13ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.simpson13ToolStripMenuItem.Text = "Simpson 1_3";
             this.simpson13ToolStripMenuItem.Click += new System.EventHandler(this.simpson13ToolStripMenuItem_Click);
             // 
             // simpson38ToolStripMenuItem
             // 
             this.simpson38ToolStripMenuItem.Name = "simpson38ToolStripMenuItem";
-            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.simpson38ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.simpson38ToolStripMenuItem.Text = "Simpson 3_8";
             this.simpson38ToolStripMenuItem.Click += new System.EventHandler(this.simpson38ToolStripMenuItem_Click);
+            // 
+            // cuadraturaGaussianaToolStripMenuItem
+            // 
+            this.cuadraturaGaussianaToolStripMenuItem.Name = "cuadraturaGaussianaToolStripMenuItem";
+            this.cuadraturaGaussianaToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.cuadraturaGaussianaToolStripMenuItem.Text = "Cuadratura gaussiana";
+            this.cuadraturaGaussianaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaGaussianaToolStripMenuItem_Click);
+            // 
+            // cuadraturaAdaptativaToolStripMenuItem
+            // 
+            this.cuadraturaAdaptativaToolStripMenuItem.Name = "cuadraturaAdaptativaToolStripMenuItem";
+            this.cuadraturaAdaptativaToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.cuadraturaAdaptativaToolStripMenuItem.Text = "Cuadratura adaptativa";
+            this.cuadraturaAdaptativaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaAdaptativaToolStripMenuItem_Click);
             // 
             // multipleToolStripMenuItem
             // 
@@ -261,46 +276,53 @@
             this.trapecioToolStripMenuItem1,
             this.simpson13ToolStripMenuItem1});
             this.multipleToolStripMenuItem.Name = "multipleToolStripMenuItem";
-            this.multipleToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.multipleToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.multipleToolStripMenuItem.Text = "Multiple";
             // 
             // trapecioToolStripMenuItem1
             // 
             this.trapecioToolStripMenuItem1.Name = "trapecioToolStripMenuItem1";
-            this.trapecioToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.trapecioToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.trapecioToolStripMenuItem1.Text = "Trapecio";
             this.trapecioToolStripMenuItem1.Click += new System.EventHandler(this.trapecioToolStripMenuItem1_Click);
             // 
             // simpson13ToolStripMenuItem1
             // 
             this.simpson13ToolStripMenuItem1.Name = "simpson13ToolStripMenuItem1";
-            this.simpson13ToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.simpson13ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.simpson13ToolStripMenuItem1.Text = "Simpson 1/3";
             this.simpson13ToolStripMenuItem1.Click += new System.EventHandler(this.simpson13ToolStripMenuItem1_Click);
             // 
-            // cuadraturaAdaptativaToolStripMenuItem
+            // abiertoTrapecioToolStripMenuItem
             // 
-            this.cuadraturaAdaptativaToolStripMenuItem.Name = "cuadraturaAdaptativaToolStripMenuItem";
-            this.cuadraturaAdaptativaToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.cuadraturaAdaptativaToolStripMenuItem.Text = "Cuadratura adaptativa";
-            this.cuadraturaAdaptativaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaAdaptativaToolStripMenuItem_Click);
+            this.abiertoTrapecioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trapecioToolStripMenuItem2,
+            this.simpsonToolStripMenuItem});
+            this.abiertoTrapecioToolStripMenuItem.Name = "abiertoTrapecioToolStripMenuItem";
+            this.abiertoTrapecioToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.abiertoTrapecioToolStripMenuItem.Text = "Abiertos";
             // 
-            // cuadraturaGaussianaToolStripMenuItem
+            // trapecioToolStripMenuItem2
             // 
-            this.cuadraturaGaussianaToolStripMenuItem.Name = "cuadraturaGaussianaToolStripMenuItem";
-            this.cuadraturaGaussianaToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.cuadraturaGaussianaToolStripMenuItem.Text = "Cuadratura gaussiana";
-            this.cuadraturaGaussianaToolStripMenuItem.Click += new System.EventHandler(this.cuadraturaGaussianaToolStripMenuItem_Click);
+            this.trapecioToolStripMenuItem2.Name = "trapecioToolStripMenuItem2";
+            this.trapecioToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
+            this.trapecioToolStripMenuItem2.Text = "Trapecio";
+            // 
+            // simpsonToolStripMenuItem
+            // 
+            this.simpsonToolStripMenuItem.Name = "simpsonToolStripMenuItem";
+            this.simpsonToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.simpsonToolStripMenuItem.Text = "Simpson";
             // 
             // menuStrip3
             // 
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.taylorToolStripMenuItem});
-            this.menuStrip3.Location = new System.Drawing.Point(0, 78);
+            this.menuStrip3.Location = new System.Drawing.Point(0, 72);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip3.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip3.Size = new System.Drawing.Size(537, 24);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -315,49 +337,49 @@
             this.formulaTaylor5ToolStripMenuItem,
             this.formulaTaylor5ToolStripMenuItem1});
             this.taylorToolStripMenuItem.Name = "taylorToolStripMenuItem";
-            this.taylorToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.taylorToolStripMenuItem.Size = new System.Drawing.Size(55, 22);
             this.taylorToolStripMenuItem.Text = "Taylor";
             this.taylorToolStripMenuItem.Click += new System.EventHandler(this.taylorToolStripMenuItem_Click);
             // 
             // formulaTaylor1ToolStripMenuItem
             // 
             this.formulaTaylor1ToolStripMenuItem.Name = "formulaTaylor1ToolStripMenuItem";
-            this.formulaTaylor1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor1ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor1ToolStripMenuItem.Text = "Formula Taylor";
             this.formulaTaylor1ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor1ToolStripMenuItem_Click);
             // 
             // formulaTaylor2ToolStripMenuItem
             // 
             this.formulaTaylor2ToolStripMenuItem.Name = "formulaTaylor2ToolStripMenuItem";
-            this.formulaTaylor2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor2ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor2ToolStripMenuItem.Text = "Formula Taylor1";
             this.formulaTaylor2ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor2ToolStripMenuItem_Click);
             // 
             // formulaTaylor3ToolStripMenuItem
             // 
             this.formulaTaylor3ToolStripMenuItem.Name = "formulaTaylor3ToolStripMenuItem";
-            this.formulaTaylor3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor3ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor3ToolStripMenuItem.Text = "Formula Taylor2";
             this.formulaTaylor3ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor3ToolStripMenuItem_Click);
             // 
             // formulaTaylor4ToolStripMenuItem
             // 
             this.formulaTaylor4ToolStripMenuItem.Name = "formulaTaylor4ToolStripMenuItem";
-            this.formulaTaylor4ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor4ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor4ToolStripMenuItem.Text = "Formula Taylor3";
             this.formulaTaylor4ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor4ToolStripMenuItem_Click);
             // 
             // formulaTaylor5ToolStripMenuItem
             // 
             this.formulaTaylor5ToolStripMenuItem.Name = "formulaTaylor5ToolStripMenuItem";
-            this.formulaTaylor5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor5ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor5ToolStripMenuItem.Text = "Formula Taylor4";
             this.formulaTaylor5ToolStripMenuItem.Click += new System.EventHandler(this.formulaTaylor5ToolStripMenuItem_Click);
             // 
             // formulaTaylor5ToolStripMenuItem1
             // 
             this.formulaTaylor5ToolStripMenuItem1.Name = "formulaTaylor5ToolStripMenuItem1";
-            this.formulaTaylor5ToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.formulaTaylor5ToolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
             this.formulaTaylor5ToolStripMenuItem1.Text = "Formula Taylor5";
             this.formulaTaylor5ToolStripMenuItem1.Click += new System.EventHandler(this.formulaTaylor5ToolStripMenuItem1_Click);
             // 
@@ -390,10 +412,10 @@
             this.menuStrip4.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ecDiferencialesToolStripMenuItem});
-            this.menuStrip4.Location = new System.Drawing.Point(0, 52);
+            this.menuStrip4.Location = new System.Drawing.Point(0, 48);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip4.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip4.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip4.Size = new System.Drawing.Size(537, 24);
             this.menuStrip4.TabIndex = 7;
             this.menuStrip4.Text = "menuStrip4";
             // 
@@ -405,42 +427,43 @@
             this.rugenTripas1ToolStripMenuItem,
             this.rugenTripas2ToolStripMenuItem,
             this.rugenTripas3ToolStripMenuItem,
-            this.eulerToolStripMenuItem});
+            this.eulerToolStripMenuItem,
+            this.sEDOSrk4ToolStripMenuItem});
             this.ecDiferencialesToolStripMenuItem.Name = "ecDiferencialesToolStripMenuItem";
-            this.ecDiferencialesToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.ecDiferencialesToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.ecDiferencialesToolStripMenuItem.Text = "Ec. Diferenciales";
             this.ecDiferencialesToolStripMenuItem.Click += new System.EventHandler(this.ecDiferencialesToolStripMenuItem_Click);
             // 
             // eliminacionGaussianaToolStripMenuItem
             // 
             this.eliminacionGaussianaToolStripMenuItem.Name = "eliminacionGaussianaToolStripMenuItem";
-            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.eliminacionGaussianaToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.eliminacionGaussianaToolStripMenuItem.Text = "eliminacion_gaussiana";
             this.eliminacionGaussianaToolStripMenuItem.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem_Click);
             // 
             // rugenTripas1ToolStripMenuItem
             // 
             this.rugenTripas1ToolStripMenuItem.Name = "rugenTripas1ToolStripMenuItem";
-            this.rugenTripas1ToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.rugenTripas1ToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.rugenTripas1ToolStripMenuItem.Text = "euler rk1";
             this.rugenTripas1ToolStripMenuItem.Click += new System.EventHandler(this.rugenTripas1ToolStripMenuItem_Click);
             // 
             // rugenTripas2ToolStripMenuItem
             // 
             this.rugenTripas2ToolStripMenuItem.Name = "rugenTripas2ToolStripMenuItem";
-            this.rugenTripas2ToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.rugenTripas2ToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.rugenTripas2ToolStripMenuItem.Text = "rk2";
             // 
             // rugenTripas3ToolStripMenuItem
             // 
             this.rugenTripas3ToolStripMenuItem.Name = "rugenTripas3ToolStripMenuItem";
-            this.rugenTripas3ToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.rugenTripas3ToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.rugenTripas3ToolStripMenuItem.Text = "rk4";
             // 
             // eulerToolStripMenuItem
             // 
             this.eulerToolStripMenuItem.Name = "eulerToolStripMenuItem";
-            this.eulerToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.eulerToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.eulerToolStripMenuItem.Text = "euler";
             this.eulerToolStripMenuItem.Click += new System.EventHandler(this.eulerToolStripMenuItem_Click);
             // 
@@ -449,10 +472,10 @@
             this.menuStrip5.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.derivacionToolStripMenuItem});
-            this.menuStrip5.Location = new System.Drawing.Point(0, 26);
+            this.menuStrip5.Location = new System.Drawing.Point(0, 24);
             this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip5.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip5.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip5.Size = new System.Drawing.Size(537, 24);
             this.menuStrip5.TabIndex = 8;
             this.menuStrip5.Text = "menuStrip5";
             // 
@@ -462,14 +485,14 @@
             this.derivacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.derivacionAdelanteToolStripMenuItem});
             this.derivacionToolStripMenuItem.Name = "derivacionToolStripMenuItem";
-            this.derivacionToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.derivacionToolStripMenuItem.Size = new System.Drawing.Size(81, 22);
             this.derivacionToolStripMenuItem.Text = "Derivacion";
             this.derivacionToolStripMenuItem.Click += new System.EventHandler(this.derivacionToolStripMenuItem_Click);
             // 
             // derivacionAdelanteToolStripMenuItem
             // 
             this.derivacionAdelanteToolStripMenuItem.Name = "derivacionAdelanteToolStripMenuItem";
-            this.derivacionAdelanteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.derivacionAdelanteToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.derivacionAdelanteToolStripMenuItem.Text = "derivacion adelante";
             this.derivacionAdelanteToolStripMenuItem.Click += new System.EventHandler(this.derivacionAdelanteToolStripMenuItem_Click);
             // 
@@ -480,8 +503,8 @@
             this.sistemasEcLinealesToolStripMenuItem});
             this.menuStrip6.Location = new System.Drawing.Point(0, 0);
             this.menuStrip6.Name = "menuStrip6";
-            this.menuStrip6.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menuStrip6.Size = new System.Drawing.Size(716, 26);
+            this.menuStrip6.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip6.Size = new System.Drawing.Size(537, 24);
             this.menuStrip6.TabIndex = 9;
             this.menuStrip6.Text = "menuStrip6";
             // 
@@ -491,44 +514,30 @@
             this.sistemasEcLinealesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eliminacionGaussianaToolStripMenuItem1});
             this.sistemasEcLinealesToolStripMenuItem.Name = "sistemasEcLinealesToolStripMenuItem";
-            this.sistemasEcLinealesToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
+            this.sistemasEcLinealesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.sistemasEcLinealesToolStripMenuItem.Text = "Sistemas ec. lineales";
             this.sistemasEcLinealesToolStripMenuItem.Click += new System.EventHandler(this.sistemasEcLinealesToolStripMenuItem_Click);
             // 
             // eliminacionGaussianaToolStripMenuItem1
             // 
             this.eliminacionGaussianaToolStripMenuItem1.Name = "eliminacionGaussianaToolStripMenuItem1";
-            this.eliminacionGaussianaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.eliminacionGaussianaToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.eliminacionGaussianaToolStripMenuItem1.Text = "Gaussiana, Pivoteo";
             this.eliminacionGaussianaToolStripMenuItem1.Click += new System.EventHandler(this.eliminacionGaussianaToolStripMenuItem1_Click);
             // 
-            // abiertoTrapecioToolStripMenuItem
+            // sEDOSrk4ToolStripMenuItem
             // 
-            this.abiertoTrapecioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trapecioToolStripMenuItem2,
-            this.simpsonToolStripMenuItem});
-            this.abiertoTrapecioToolStripMenuItem.Name = "abiertoTrapecioToolStripMenuItem";
-            this.abiertoTrapecioToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.abiertoTrapecioToolStripMenuItem.Text = "Abiertos";
-            // 
-            // trapecioToolStripMenuItem2
-            // 
-            this.trapecioToolStripMenuItem2.Name = "trapecioToolStripMenuItem2";
-            this.trapecioToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.trapecioToolStripMenuItem2.Text = "Trapecio";
-            // 
-            // simpsonToolStripMenuItem
-            // 
-            this.simpsonToolStripMenuItem.Name = "simpsonToolStripMenuItem";
-            this.simpsonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.simpsonToolStripMenuItem.Text = "Simpson";
+            this.sEDOSrk4ToolStripMenuItem.Name = "sEDOSrk4ToolStripMenuItem";
+            this.sEDOSrk4ToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.sEDOSrk4ToolStripMenuItem.Text = "SEDOS_rk4";
+            this.sEDOSrk4ToolStripMenuItem.Click += new System.EventHandler(this.sEDOSrk4ToolStripMenuItem_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(716, 362);
+            this.ClientSize = new System.Drawing.Size(537, 294);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
@@ -536,7 +545,7 @@
             this.Controls.Add(this.menuStrip5);
             this.Controls.Add(this.menuStrip6);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -611,5 +620,6 @@
         private System.Windows.Forms.ToolStripMenuItem abiertoTrapecioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trapecioToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem simpsonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sEDOSrk4ToolStripMenuItem;
     }
 }

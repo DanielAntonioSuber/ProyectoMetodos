@@ -243,5 +243,11 @@ namespace ProyectoMetodos
         {
 
         }
+
+        private void sEDOSrk4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rugen_Kutta_4_SEDOS SEDOS = new Rugen_Kutta_4_SEDOS();
+            SEDOS.Show();
+        }
     }
 }
