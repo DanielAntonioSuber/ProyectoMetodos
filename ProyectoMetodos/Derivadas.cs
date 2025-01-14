@@ -8,7 +8,7 @@ namespace ProyectoMetodos
 {
     internal class Derivadas_Numericas
     {
-        public float Derivada_Dos_Puntos(float x0, float h)
+        public static float Derivada_Dos_Puntos(float x0, float h)
         {
             float xi = x0;
             float xi_1 = x0 + h;
@@ -17,7 +17,7 @@ namespace ProyectoMetodos
             return aproximacion;
         }
 
-        public float Derivada_Tres_Puntos(float x0, float h)
+        public static float Derivada_Tres_Puntos(float x0, float h)
         {
             float xi = x0;
             float xi_1 = x0 + h;
@@ -27,7 +27,7 @@ namespace ProyectoMetodos
             return aproximacion;
         }
 
-        public float Derivada_Cuatro_Puntos(float x0, float h)
+        public static float Derivada_Cuatro_Puntos(float x0, float h)
         {
             float xi = x0;
             float xi_1 = x0 + h;
@@ -38,7 +38,7 @@ namespace ProyectoMetodos
             return aproximacion;
         }
 
-        private float Func(float x)
+        private static float Func(float x)
         {
         
             return x * x - 3 * x + 2; 
